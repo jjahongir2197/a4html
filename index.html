@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>API Example</h2>
+
+<button onclick="load()">Load Data</button>
+
+<p id="res"></p>
+
+<script>
+function load(){
+    fetch("/api")
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("res").innerHTML =
+        data.name + " - " + data.age;
+    })
+}
+</script>
+
+</body>
+</html>
